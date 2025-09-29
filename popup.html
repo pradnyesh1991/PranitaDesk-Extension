@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PranitaDesk AI</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 PranitaDesk AI</h1>
+            <p>सरकारी कार्य सहाय्यक</p>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <span>📍 Portal:</span>
+                <span id="portal-status">Ready</span>
+            </div>
+            <div class="status-item">
+                <span>🤖 AI:</span>
+                <span id="ai-status">Active</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <select id="certificate-type">
+                <option value="auto">🎯 Auto Detect</option>
+                <option value="domicile">निवास प्रमाणपत्र</option>
+                <option value="income">उत्पन्न प्रमाणपत्र</option>
+                <option value="caste">जाती प्रमाणपत्र</option>
+            </select>
+
+            <button id="analyze-btn" class="btn primary">
+                📊 Analyze Application
+            </button>
+
+            <button id="generate-btn" class="btn secondary">
+                💬 Generate Remarks
+            </button>
+
+            <button id="voice-btn" class="btn voice">
+                🗣️ Voice Input (मराठी)
+            </button>
+        </div>
+
+        <div id="results" class="results" style="display:none;">
+            <h3>📊 Results:</h3>
+            <div class="result-item">
+                <span>Documents:</span>
+                <span id="docs-count">0</span>
+            </div>
+            <div class="result-item">
+                <span>Confidence:</span>
+                <span id="confidence">0%</span>
+            </div>
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="advanced">
+            <h3>🔧 Advanced Features</h3>
+            <div class="feature-buttons">
+                <button class="btn-mini" id="stats-btn">📊 Stats</button>
+                <button class="btn-mini" id="export-btn">📄 Export</button>
+                <button class="btn-mini" id="help-btn">❓ Help</button>
+                <button class="btn-mini" id="settings-btn">⚙️ Settings</button>
+            </div>
+        </div>
+
+        <div id="notifications" class="notifications"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

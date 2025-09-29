@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "PranitaDesk AI Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered government certificate processing assistant",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://revenue.mahaonline.gov.in/*",
+    "https://mahaonline.gov.in/*",
+    "*://*.gov.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PranitaDesk AI Assistant"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.gov.in/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
